@@ -23,9 +23,9 @@ public class GraphCounter implements Processor {
         });
         int i = Integer.parseInt(tmp);
         input = new ArrayList<>();
-        while (i > 0) {
-            input.add(InOutUtil.input(constants.getString("graphCounterInput"), new GraphValidator()));
-            i--;
+        for (int j = 0; j < i; j++) {
+            String msg = String.format(constants.getString("graphCounterInput"), j + 1);
+            input.add(InOutUtil.input(msg, new GraphValidator()));
         }
     }
 
